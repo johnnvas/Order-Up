@@ -10,12 +10,13 @@ db = SQLAlchemy()
 
 class Employee(db.Model, UserMixin):  # Your class definition
     # Mapping attributes here
-    __tablename__ = 'employees'
 
+    __tablename__ = "employee"
     id = Column(Integer, primary_key=True)
-    name = Column(String(100), nullable=False)
+    name = Column(String(200), nullable=False)
     employee_number=Column(Integer, nullable=False, unique=True)
-    hashed_password=Column(String(100), nullable=False)
+    hashed_password=Column(String(300), nullable=False)
+
 
     @property
     def password(self):
